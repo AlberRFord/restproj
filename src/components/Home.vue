@@ -7,6 +7,7 @@
           <td>Name</td>
           <td>Contact</td>
           <td>Address</td>
+          <td>Tables</td>
           <td>Actions</td>
       </tr>
       <tr v-for="item in restaurant" :key="item.id">
@@ -14,8 +15,10 @@
 <td>{{item.name}}</td>
 <td>{{item.contact}}</td>
 <td>{{item.address}}</td>
+<td>{{item.tablesnum}}</td>
 <td>
     <router-link :to="'/update' + item.id">Update</router-link>
+    <router-link :to="'/reserve' + item.id">Reserve</router-link>
     <button v-on:click="deleteRestaurant(item.id)">Delete</button>
     </td>
       </tr>

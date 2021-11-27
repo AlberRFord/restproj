@@ -50,7 +50,7 @@ export default {
         address: this.restaurant.address,
         contact: this.restaurant.contact,
       });
-      if (result.statuus == 200) {
+      if (result.status == 200) {
         this.$router.push({ name: "Home" });
       }
     },
@@ -63,7 +63,6 @@ export default {
     const result = await axios.get(
       "http://localhost:3000/restaurant/" + this.$route.params.id
     );
-    //console.warn(this.$route.params.id)
     console.warn(result.data);
     this.restaurant = result.data;
   }
